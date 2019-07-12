@@ -25,8 +25,17 @@ This sprint challenge is divided up into three parts:  Hash tables (24 points), 
 During your challenge, you will be pulled aside by a PM for a 5 minute interview. During this interview, you will be expected to answer the following three questions:
 
   * 1. What is a blockchain and how does it work?
+
+  A blockchain in a data structure built with a linked list and hashing. It works by providing proof of work and a public ledger to validate all links in the chain. It uses processing power to generate numbers that when hashed start with a # of 0's.
+
   * 2. What is an array and how does it work?
+
+An array is a continuous set of items with a fixed length and indexing.
+
+
   * 3. What is a hash table and how does it work?
+
+  A hash table is very much like an array in some ways, but the indexes are hashed keys. This allows hash tables to have a very quick lookup time, because you can just look for the key. Once a key is entered it is hashed. When looking for the key again, you hash the input and compare that to the hashed key in the table
 
 You will receive points at the PM's discretion based on the following criteria:
 
@@ -52,11 +61,11 @@ A hash table implementation has been included for you already. Your task is to g
 
 For the blockchain portion of the challenge, you will be writing code for a new miner that will solve a different Proof of Work algorithm than the one we have been working with.
 
-Your goal is to mine at least one coin.  Keep in mind that with many people competing over the same coins, this may take a long time.  By our math, we expect that an average solution should be the first to find a solution at least once in an hour or two of mining.  
+Your goal is to mine at least one coin.  Keep in mind that with many people competing over the same coins, this may take a long time.  By our math, we expect that an average solution should be the first to find a solution at least once in an hour or two of mining.
 
 ## Minimum Viable Product
 
-You can earn 35 points from the main coding portion of the sprint challenge.  Be sure to budget your time wisely.  The Blockchain challenge is fun, but it is only 1/3 of the points availible for the coding portion of this challenge.  
+You can earn 35 points from the main coding portion of the sprint challenge.  Be sure to budget your time wisely.  The Blockchain challenge is fun, but it is only 1/3 of the points availible for the coding portion of this challenge.
 
 #### [Blockchain](https://github.com/LambdaSchool/Sprint-Challenge--Hash-BC/tree/master/blockchain) - 12 pts
   * ex1 - 12 pts
@@ -75,7 +84,7 @@ Both Hash Table problems will be graded as follows:
 
 ### Grading
 
-Students can receive up to 55 points in total for this Sprint Challenge (not including 4 extra credit points). 
+Students can receive up to 55 points in total for this Sprint Challenge (not including 4 extra credit points).
 
   * __Challenge__: 35
   * __Interview__: 20
@@ -86,4 +95,4 @@ The score distributions are as follows:
 
   * __3__: >= 48 points
   * __2__: >= 35 points
-  * __1__: < 34 points 
+  * __1__: < 34 points
