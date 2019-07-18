@@ -1,6 +1,6 @@
 import hashlib
 import requests
-
+import math
 import sys
 
 from uuid import uuid4
@@ -22,9 +22,14 @@ def proof_of_work(last_proof):
     start = timer()
 
     print("Searching for next proof")
-    proof = 0
+    proof = random.randint(0, sys.maxsize)
     #  TODO: Your code here
+    while valid_proof(last_proof, proof) is False:
+        proof += random.randint(0, 101)
+        # proof = random.randint(0, sys.maxsize)
 
+        # proof += 1
+        # print(proof)
     print("Proof found: " + str(proof) + " in " + str(timer() - start))
     return proof
 
@@ -38,7 +43,16 @@ def valid_proof(last_hash, proof):
     """
 
     # TODO: Your code here!
-    pass
+    last_proof = f"{last_hash}".encode()
+    new_proof = f"{proof}".encode()
+
+    last_proof_hash = hashlib.sha256(last_proof).hexdigest()
+    last_proof_hash_compare = last_proof_hash[-6:]
+
+    new_proof_hash = hashlib.sha256(new_proof).hexdigest()
+    new_proof_hash_compare = new_proof_hash[:6]
+
+    return last_proof_hash_compare == new_proof_hash_compare
 
 
 if __name__ == '__main__':
@@ -46,7 +60,7 @@ if __name__ == '__main__':
     if len(sys.argv) > 1:
         node = sys.argv[1]
     else:
-        node = "https://lambda-coin.herokuapp.com"
+        node = "http://lambda-coin.herokuapp.com"
 
     coins_mined = 0
 
